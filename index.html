@@ -1,128 +1,166 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Zaruri — Coming Soon</title>
-  <meta name="description" content="Coming soon." />
-  <meta name="robots" content="index, follow" />
-  <meta name="theme-color" content="#080808" />
-  <meta property="og:title" content="Zaruri" />
-  <meta property="og:description" content="Coming soon." />
-  <meta property="og:type" content="website" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23080808'/><circle cx='50' cy='50' r='22' fill='%23BFFF00'/></svg>" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet" />
-
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --black: #080808;
-      --white: #F4EFE6;
-      --muted: rgba(244,239,230,0.4);
-      --accent: #BFFF00;
-      --mono:  'IBM Plex Mono', monospace;
-      --display: 'Bebas Neue', sans-serif;
-    }
-
-    body {
-      background: var(--black);
-      color: var(--white);
-      font-family: var(--mono);
-      min-height: 100dvh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 24px 16px;
-    }
-
-    .brand {
-      font-family: var(--display);
-      font-size: clamp(20px, 2.4vw, 28px);
-      letter-spacing: 0.32em;
-      padding-left: 0.32em; /* balance trailing letter-spacing */
-      color: var(--muted);
-      margin-bottom: 20px;
-      opacity: 0;
-      animation: fadeUp 0.7s ease 0s forwards;
-    }
-
-    .coming-soon {
-      font-family: var(--display);
-      font-weight: 400;
-      font-size: clamp(40px, 8vw, 96px);
-      white-space: nowrap;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      color: var(--white);
-      display: flex;
-      align-items: center;
-      gap: clamp(12px, 1.6vw, 20px);
-      opacity: 0;
-      animation: fadeUp 0.7s ease 0.1s forwards;
-    }
-
-    .dot {
-      width: clamp(18px, 2.4vw, 28px);
-      height: clamp(18px, 2.4vw, 28px);
-      border-radius: 50%;
-      background: var(--accent);
-      flex-shrink: 0;
-      animation: pulse 2.4s ease-in-out infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50%       { opacity: 0.4; transform: scale(0.7); }
-    }
-
-    .subtitle {
-      font-size: clamp(13px, 1.6vw, 18px);
-      font-weight: 300;
-      letter-spacing: 0.12em;
-      color: var(--muted);
-      margin-top: 16px;
-      opacity: 0;
-      animation: fadeUp 0.7s ease 0.35s forwards;
-    }
-
-    footer {
-      position: fixed;
-      bottom: 24px;
-      left: 0;
-      right: 0;
-      font-size: 11px;
-      letter-spacing: 0.12em;
-      color: var(--muted);
-      opacity: 0;
-      animation: fadeUp 0.7s ease 0.6s forwards;
-    }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(28px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        animation-delay: 0.01ms !important;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#050706" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Coming Soon</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --background: #050706;
+        --text: #f4f7f5;
+        --muted: #7e8781;
+        --green: #8df4b4;
+        --green-bright: #c1ffd7;
       }
-    }
-  </style>
-</head>
 
-<body>
-  <main>
-    <p class="brand">ZARURI</p>
-    <h1 class="coming-soon"><span class="dot"></span>Coming Soon</h1>
-    <p class="subtitle">Something new is on the way.</p>
-  </main>
-  <footer>&copy; <span id="year">2026</span> Zaruri</footer>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
-</body>
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        min-height: 100%;
+        margin: 0;
+      }
+
+      body {
+        min-height: 100svh;
+        overflow: hidden;
+        background:
+          radial-gradient(circle at 50% 46%, rgba(71, 130, 91, 0.06), transparent 32rem),
+          var(--background);
+        color: var(--text);
+        font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      main {
+        min-height: 100svh;
+        display: grid;
+        place-items: center;
+        padding: 2rem;
+      }
+
+      .hero {
+        position: relative;
+        display: grid;
+        place-items: center;
+        width: min(72vw, 32rem);
+        aspect-ratio: 1;
+        text-align: center;
+      }
+
+      .ring,
+      .ring::before,
+      .ring::after {
+        position: absolute;
+        inset: 0;
+        border-radius: 50%;
+      }
+
+      .ring {
+        background: conic-gradient(
+          from 225deg,
+          transparent 0deg 43deg,
+          rgba(141, 244, 180, 0.14) 76deg,
+          var(--green) 145deg,
+          var(--green-bright) 184deg,
+          var(--green) 222deg,
+          rgba(141, 244, 180, 0.14) 292deg,
+          transparent 325deg 360deg
+        );
+        filter: drop-shadow(0 0 0.7rem rgba(110, 240, 159, 0.34));
+        animation: orbit 9s linear infinite;
+        -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #000 calc(100% - 1px));
+        mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #000 calc(100% - 1px));
+      }
+
+      .ring::before {
+        content: "";
+        background: conic-gradient(
+          from 215deg,
+          transparent 0deg 64deg,
+          rgba(141, 244, 180, 0.45) 145deg,
+          var(--green-bright) 180deg,
+          rgba(141, 244, 180, 0.45) 215deg,
+          transparent 296deg 360deg
+        );
+        filter: blur(0.3rem);
+      }
+
+      .ring::after {
+        content: "";
+        inset: 1px;
+        border: 1px solid rgba(113, 178, 136, 0.09);
+      }
+
+      .copy {
+        position: relative;
+        z-index: 1;
+        transform: translateY(0.15rem);
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(1.55rem, 4vw, 2.65rem);
+        font-weight: 400;
+        letter-spacing: 0.22em;
+        line-height: 1.1;
+        text-indent: 0.22em;
+      }
+
+      p {
+        margin: 1.15rem 0 0;
+        color: var(--muted);
+        font-size: clamp(0.58rem, 1.35vw, 0.72rem);
+        font-weight: 500;
+        letter-spacing: 0.28em;
+        line-height: 1.5;
+        text-indent: 0.28em;
+      }
+
+      @keyframes orbit {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      @media (max-width: 420px) {
+        .hero {
+          width: min(80vw, 24rem);
+        }
+
+        h1 {
+          letter-spacing: 0.17em;
+          text-indent: 0.17em;
+        }
+
+        p {
+          max-width: 15rem;
+          letter-spacing: 0.2em;
+          text-indent: 0.2em;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .ring {
+          animation: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="hero" aria-labelledby="page-title">
+        <div class="ring" aria-hidden="true"></div>
+        <div class="copy">
+          <h1 id="page-title">COMING SOON</h1>
+          <p>SOMETHING NEW ON THE WAY</p>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>
